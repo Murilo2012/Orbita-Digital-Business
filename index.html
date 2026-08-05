@@ -199,30 +199,6 @@
   .service-card h3 { font-size: 1.08rem; margin-bottom: 0.5rem; }
   .service-card p { font-size: 0.92rem; color: var(--ink-muted); margin: 0; line-height: 1.5; }
 
-  /* ---- Products ---- */
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.4rem;
-  }
-  .product-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  .product-cover { aspect-ratio: 2 / 3; overflow: hidden; background: #0a1428; }
-  .product-cover svg { width: 100%; height: 100%; }
-  .product-body { padding: 1.3rem 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-  .product-body h3 { font-size: 1rem; }
-  .product-body p { font-size: 0.86rem; color: var(--ink-muted); margin: 0; flex: 1; }
-  .product-price { font-family: 'IBM Plex Mono', monospace; color: var(--accent-2); font-size: 0.95rem; }
-
-  .products-cta { margin-top: 2.6rem; text-align: center; }
-  .products-note { font-size: 0.82rem; color: var(--ink-muted); margin-top: 0.8rem; }
-
   /* ---- Contact ---- */
   .contact-block {
     background: radial-gradient(circle at 30% 20%, rgba(47,123,255,0.22), transparent 60%), var(--surface-2);
@@ -323,81 +299,32 @@
 <section class="block" id="produtos">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">NOSSOS EBOOKS</span>
-      <h2>Conteúdo prático, pronto pra usar hoje.</h2>
-      <p>Todos vendidos na Hotmart, com entrega imediata após a compra.</p>
+      <span class="eyebrow">COMO FUNCIONA</span>
+      <h2>Ebook pensado pro seu negócio, não modelo pronto.</h2>
+      <p>Nada de template genérico com o nome trocado — cada ebook é escrito sob medida pro público e pro problema que o seu negócio resolve.</p>
     </div>
 
-    <div class="products reveal">
-
-      <div class="product-card">
-        <div class="product-cover">
-          <svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#101e3d"/><stop offset="100%" stop-color="#050b18"/></linearGradient></defs>
-            <rect width="1000" height="1500" fill="url(#bg1)"/>
-            <circle cx="500" cy="430" r="230" fill="none" stroke="#5ee1ff" stroke-width="4" opacity="0.55"/>
-            <circle cx="500" cy="430" r="170" fill="none" stroke="#2f7bff" stroke-width="2" opacity="0.5"/>
-            <path d="M 500 300 A 130 130 0 0 1 500 560" fill="none" stroke="#2f7bff" stroke-width="10" stroke-linecap="round"/>
-            <circle cx="500" cy="430" r="10" fill="#5ee1ff"/>
-            <text x="500" y="780" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#5ee1ff" letter-spacing="5">FINANÇAS</text>
-            <text x="500" y="870" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="62" fill="#eaf1ff">Para Onde Foi</text>
-            <text x="500" y="945" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="62" fill="#eaf1ff">Meu Dinheiro?</text>
-          </svg>
-        </div>
-        <div class="product-body">
-          <h3>Para Onde Foi Meu Dinheiro?</h3>
-          <p>Organize suas finanças sem culpa e sem planilha complicada.</p>
-          <span class="product-price">R$ 47</span>
-        </div>
+    <div class="services reveal">
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.4-.7L3 21l1.7-6.1a8.4 8.4 0 0 1-.7-3.4A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z"/></svg></div>
+        <h3>1. Entendemos seu negócio</h3>
+        <p>Conversamos sobre seu público, o problema que ele enfrenta hoje e o tom de voz da sua marca antes de escrever qualquer linha.</p>
       </div>
-
-      <div class="product-card">
-        <div class="product-cover">
-          <svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#101e3d"/><stop offset="100%" stop-color="#050b18"/></linearGradient></defs>
-            <rect width="1000" height="1500" fill="url(#bg2)"/>
-            <circle cx="500" cy="420" r="210" fill="none" stroke="#1b2e55" stroke-width="26"/>
-            <path d="M 500 210 A 210 210 0 0 1 682 525" fill="none" stroke="#2f7bff" stroke-width="26" stroke-linecap="round"/>
-            <circle cx="500" cy="420" r="10" fill="#5ee1ff"/>
-            <line x1="500" y1="420" x2="500" y2="330" stroke="#eaf1ff" stroke-width="6" stroke-linecap="round"/>
-            <line x1="500" y1="420" x2="565" y2="420" stroke="#eaf1ff" stroke-width="6" stroke-linecap="round"/>
-            <text x="500" y="780" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#5ee1ff" letter-spacing="5">PRODUTIVIDADE</text>
-            <text x="500" y="865" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="54" fill="#eaf1ff">Foco Não é</text>
-            <text x="500" y="935" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="54" fill="#eaf1ff">Força de Vontade</text>
-          </svg>
-        </div>
-        <div class="product-body">
-          <h3>Foco Não é Força de Vontade</h3>
-          <p>Como treinar concentração profunda na era das notificações.</p>
-          <span class="product-price">R$ 47</span>
-        </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>2. Escrevemos sob medida</h3>
+        <p>Capítulos práticos e reais, na voz do seu negócio — sem enrolação, sem estatística inventada, sem promessa que não se sustenta.</p>
       </div>
-
-      <div class="product-card">
-        <div class="product-cover">
-          <svg viewBox="0 0 1000 1500" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#101e3d"/><stop offset="100%" stop-color="#050b18"/></linearGradient></defs>
-            <rect width="1000" height="1500" fill="url(#bg3)"/>
-            <circle cx="410" cy="400" r="110" fill="none" stroke="#2f7bff" stroke-width="4" opacity="0.7"/>
-            <circle cx="590" cy="400" r="110" fill="none" stroke="#eaf1ff" stroke-width="3" opacity="0.3"/>
-            <line x1="480" y1="400" x2="520" y2="400" stroke="#5ee1ff" stroke-width="3" opacity="0.7"/>
-            <text x="500" y="780" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#5ee1ff" letter-spacing="5">RELACIONAMENTOS</text>
-            <text x="500" y="860" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="48" fill="#eaf1ff">Discussão Não</text>
-            <text x="500" y="925" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="48" fill="#eaf1ff">Precisa Virar Briga</text>
-          </svg>
-        </div>
-        <div class="product-body">
-          <h3>Discussão Não Precisa Virar Briga</h3>
-          <p>Comunicação não violenta pro dia a dia do casal.</p>
-          <span class="product-price">R$ 47</span>
-        </div>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>3. Adaptamos ao formato certo</h3>
+        <p>Capa, formatação e página de vendas pensadas pra onde você vai vender — Hotmart, seu site, ou como material de apoio ao seu produto.</p>
       </div>
-
-    </div>
-
-    <div class="products-cta reveal">
-      <a class="btn btn-primary" href="#" id="hotmart-store-link" target="_blank" rel="noopener">Ver todos os ebooks na Hotmart</a>
-      <p class="products-note">⚠️ Link da loja ainda não configurado — substitua o href de #hotmart-store-link pelo link real da sua vitrine/produtos assim que tiver.</p>
+      <div class="service-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></div>
+        <h3>4. Entregamos pronto</h3>
+        <p>Arquivo final e material de divulgação prontos pra publicar — você não precisa mexer em nada.</p>
+      </div>
     </div>
   </div>
 </section>
