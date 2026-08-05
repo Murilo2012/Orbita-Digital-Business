@@ -31,3 +31,14 @@ O dono quer poder abrir `agentes.html` a qualquer momento e ver, tipo uma
 sala de reunião, quais agentes estão rodando e o que cada um fez por último
 — sem precisar perguntar no chat. `status.json` é a fonte da verdade dessa
 página; ela só mostra o que os próprios agentes escreveram lá.
+
+## Regra permanente: custo zero, sempre
+
+O dono nunca paga nada por infraestrutura/ferramentas — nem mensalidade,
+nem uso pago de API, nem plano pago de nenhuma plataforma. Qualquer
+proposta de arquitetura (bots, agentes, hospedagem, APIs de IA) precisa
+usar camadas 100% gratuitas (ex: Gemini/Groq free tier em vez de API paga
+da Claude, hospedagem free tier tipo Render/Railway/Oracle Cloud, cota
+gratuita de mensagens do WhatsApp Business). Se uma ideia só funciona com
+custo real, isso precisa ser dito claramente antes de construir, nunca
+assumido ou escondido.
