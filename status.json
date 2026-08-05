@@ -1,0 +1,47 @@
+{
+  "updated_at": "2026-08-05T22:50:00Z",
+  "agents": [
+    {
+      "id": "ebook-factory-1",
+      "name": "Fábrica de Ebooks #1",
+      "role": "Pesquisa nicho e escreve ebook completo",
+      "status": "pausado",
+      "caption": "Pausado pelo dono — último trabalho: escreveu \"Para Onde Foi Meu Dinheiro?\" (finanças). Aguardando o 1º produto ser publicado na Hotmart antes de retomar."
+    },
+    {
+      "id": "ebook-factory-2",
+      "name": "Fábrica de Ebooks #2",
+      "role": "Pesquisa nicho e escreve ebook completo",
+      "status": "pausado",
+      "caption": "Pausado pelo dono — último trabalho: escreveu \"Foco Não é Força de Vontade\" (produtividade). Aguardando o 1º produto ser publicado na Hotmart antes de retomar."
+    },
+    {
+      "id": "ebook-factory-3",
+      "name": "Fábrica de Ebooks #3",
+      "role": "Pesquisa nicho e escreve ebook completo",
+      "status": "pausado",
+      "caption": "Pausado pelo dono — último trabalho: escreveu \"Discussão Não Precisa Virar Briga\" (relacionamentos). Aguardando o 1º produto ser publicado na Hotmart antes de retomar."
+    },
+    {
+      "id": "ebook-factory-4",
+      "name": "Fábrica de Ebooks #4",
+      "role": "Pesquisa nicho e escreve ebook completo",
+      "status": "pausado",
+      "caption": "Pausado pelo dono antes do primeiro ciclo rodar. Aguardando o 1º produto ser publicado na Hotmart antes de ativar."
+    },
+    {
+      "id": "divulgacao",
+      "name": "Divulgação (Social)",
+      "role": "Agenda posts no Metricool pros ebooks prontos",
+      "status": "pausado",
+      "caption": "Pausado pelo dono — não faz sentido divulgar produto que ainda não tem link de compra real na Hotmart."
+    },
+    {
+      "id": "afiliados-atendimento",
+      "name": "Afiliados / Atendimento",
+      "role": "Lê o Gmail, deixa rascunho de resposta e atualiza pitch de afiliados",
+      "status": "ativo",
+      "caption": "Ativo, roda 1x por dia. Próximo ciclo: 06/08 às 14:30 (UTC). Só cria rascunho — nunca envia e-mail sozinho."
+    }
+  ]
+}

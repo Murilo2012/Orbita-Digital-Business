@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sala dos Agentes — Órbita Digital</title>
+<meta name="description" content="Reunião ao vivo dos agentes de IA da Órbita Digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050b18;
+    --bg-2: #0a1428;
+    --surface: #101e3d;
+    --surface-2: #0c1830;
+    --ink: #eaf1ff;
+    --ink-muted: #7f93bd;
+    --accent: #2f7bff;
+    --accent-2: #5ee1ff;
+    --live: #33d17a;
+    --paused: #566789;
+    --border: rgba(234,241,255,0.10);
+    --shadow: rgba(3,10,26,0.55);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  h1, h2 { font-family: 'Sora', sans-serif; font-weight: 700; margin: 0; text-wrap: balance; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.6rem; }
+
+  nav.top {
+    position: sticky; top: 0; z-index: 30;
+    backdrop-filter: blur(14px);
+    background: rgba(5,11,24,0.72);
+    border-bottom: 1px solid var(--border);
+  }
+  nav.top .inner {
+    max-width: 1120px; margin: 0 auto; padding: 1.1rem 1.6rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .wordmark { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.15rem; display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink); }
+  .wordmark .mark { width: 26px; height: 26px; }
+  .back-link { font-size: 0.9rem; color: var(--ink-muted); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+  }
+  .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); }
+
+  header.page-head { padding: 3.5rem 0 2.5rem; text-align: center; }
+  header.page-head h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 1rem auto 0.8rem; max-width: 640px; }
+  header.page-head p { color: var(--ink-muted); max-width: 480px; margin: 0 auto; }
+  .meta-row {
+    display: flex; justify-content: center; gap: 1.6rem; margin-top: 1.6rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--ink-muted);
+    flex-wrap: wrap;
+  }
+  .meta-row b { color: var(--ink); font-weight: 500; }
+
+  .room {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+    padding-bottom: 4.5rem;
+  }
+  @media (min-width: 720px) { .room { grid-template-columns: repeat(3, 1fr); } }
+
+  .tile {
+    background: linear-gradient(160deg, var(--surface), var(--surface-2));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-area {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 35%, rgba(47,123,255,0.16), transparent 65%);
+  }
+  .avatar {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    background: var(--surface-2);
+    border: 2px solid var(--paused);
+    color: var(--ink-muted);
+  }
+  .tile[data-status="ativo"] .avatar {
+    border-color: var(--live);
+    color: var(--ink);
+    box-shadow: 0 0 0 6px rgba(51,209,122,0.12);
+  }
+
+  .status-dot {
+    position: absolute;
+    top: 0.9rem; right: 0.9rem;
+    display: flex; align-items: center; gap: 0.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(5,11,24,0.6);
+    color: var(--paused);
+  }
+  .status-dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--paused); }
+  .tile[data-status="ativo"] .status-dot { color: var(--live); }
+  .tile[data-status="ativo"] .status-dot::before { background: var(--live); box-shadow: 0 0 8px var(--live); animation: pulse 1.6s ease-in-out infinite; }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+  .name-tag {
+    position: absolute;
+    bottom: 0.8rem; left: 0.8rem;
+    background: rgba(5,11,24,0.65);
+    backdrop-filter: blur(6px);
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .caption-box {
+    padding: 1rem 1.1rem 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+  .caption-box .role { font-size: 0.72rem; color: var(--accent-2); font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.03em; margin-bottom: 0.5rem; }
+  .caption-box .caption { font-size: 0.88rem; color: var(--ink-muted); margin: 0; min-height: 2.6em; }
+  .caption-box .caption.loading { opacity: 0.5; }
+
+  footer { padding: 2rem 0 3rem; text-align: center; color: var(--ink-muted); font-size: 0.85rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .status-dot::before { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a class="wordmark" href="index.html">
+      <svg class="mark" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="46" stroke="#2f7bff" stroke-width="4" opacity="0.55"/>
+        <circle cx="50" cy="50" r="30" stroke="#5ee1ff" stroke-width="3" opacity="0.85"/>
+        <circle cx="50" cy="6" r="6" fill="#5ee1ff"/>
+      </svg>
+      Órbita Digital
+    </a>
+    <a class="back-link" href="index.html">← voltar pro site</a>
+  </div>
+</nav>
+
+<header class="page-head wrap">
+  <span class="eyebrow">SALA DOS AGENTES</span>
+  <h1>Os agentes de IA da Órbita, como se fosse uma reunião.</h1>
+  <p>Cada card é um agente. Embaixo do nome, o que ele está fazendo (ou fez por último).</p>
+  <div class="meta-row">
+    <span>Atualizado em <b id="updated-at">—</b></span>
+    <span><b id="active-count">—</b> ativo(s) agora</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="room" id="room">
+    <!-- tiles injected by JS -->
+  </div>
+</div>
+
+<footer>
+  Órbita Digital — esse status é atualizado pelos próprios agentes a cada ciclo, não é uma câmera ao vivo.
+</footer>
+
+<script>
+  function initials(name) {
+    var words = name.replace(/[^\p{L}\s]/gu, '').split(' ').filter(Boolean);
+    return words.slice(0, 2).map(w => w[0]).join('').toUpperCase();
+  }
+
+  function fmtDate(iso) {
+    try {
+      var d = new Date(iso);
+      return d.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) + ' UTC'.replace('UTC','') ;
+    } catch (e) { return iso; }
+  }
+
+  function render(data) {
+    document.getElementById('updated-at').textContent = fmtDate(data.updated_at);
+    var activeCount = data.agents.filter(function (a) { return a.status === 'ativo'; }).length;
+    document.getElementById('active-count').textContent = activeCount;
+
+    var room = document.getElementById('room');
+    room.innerHTML = '';
+    data.agents.forEach(function (agent) {
+      var tile = document.createElement('div');
+      tile.className = 'tile';
+      tile.setAttribute('data-status', agent.status);
+      tile.innerHTML =
+        '<div class="video-area">' +
+          '<div class="avatar">' + initials(agent.name) + '</div>' +
+          '<div class="status-dot">' + (agent.status === 'ativo' ? 'ativo' : 'pausado') + '</div>' +
+          '<div class="name-tag">' + agent.name + '</div>' +
+        '</div>' +
+        '<div class="caption-box">' +
+          '<div class="role">' + agent.role + '</div>' +
+          '<p class="caption">' + agent.caption + '</p>' +
+        '</div>';
+      room.appendChild(tile);
+    });
+  }
+
+  function loadingState() {
+    var room = document.getElementById('room');
+    room.innerHTML = '<p style="color:var(--ink-muted); grid-column: 1 / -1;">Carregando status dos agentes…</p>';
+  }
+
+  loadingState();
+  fetch('status.json', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(render)
+    .catch(function () {
+      document.getElementById('room').innerHTML =
+        '<p style="color:var(--ink-muted); grid-column: 1 / -1;">Não consegui carregar o status agora. Recarrega a página em alguns segundos.</p>';
+    });
+</script>
+
+</body>
+</html>
