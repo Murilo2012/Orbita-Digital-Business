@@ -79,27 +79,48 @@ depois (limitação do plano gratuito).
 
 ## 4. Como escolher onde gastar as 10 conexões/mês
 
-No plano gratuito são só 10 propostas por mês, e elas **não acumulam**.
-Critérios pra não desperdiçar:
+### A realidade do mercado (verificada em campo, ago/2026)
 
-**Vale a pena mandar proposta quando:**
-- É site institucional, landing page ou página simples (o que você faz bem)
-- O orçamento é R$300 ou mais
-- A descrição é clara (cliente sabe o que quer = menos retrabalho)
-- Tem menos de ~15 propostas ainda
-- O cliente tem avaliações boas de outros freelancers
+Projetos de landing page e site institucional recebem **88 a 240 propostas**.
+Não 20-50 como a maioria dos artigos diz. Isso muda a estratégia:
+
+- Ganhar por volume é impossível no plano gratuito (10 conexões/mês)
+- A prévia funcionando não é "diferencial", é a **única** forma de ser visto
+- Projeto grande com perfil sem avaliação = chance muito baixa
+
+### Fase 1 — Conseguir as 3 primeiras avaliações
+
+**Alvo: trabalhos pequenos de manutenção**, não projetos grandes.
+Busca por: "atualizar site", "corrigir layout", "ajustar responsivo",
+"trocar textos do site", "arrumar site no celular".
+
+Por quê: valem R$50-200, freelancer experiente ignora, então costumam ter
+5-20 propostas em vez de 200. Você entrega em 1-2 horas e ganha a avaliação
+— que é o ativo que falta.
+
+Nessa fase, **avaliação vale mais que o dinheiro**. Aceitar R$80 por 1 hora
+de trabalho é bom negócio se render 5 estrelas.
+
+### Fase 2 — Depois de 3+ avaliações positivas
+
+Aí sim disputar landing pages e sites institucionais (R$500-1500), porque
+agora você tem prova social contra os outros 143 candidatos.
+
+### Critérios pra gastar uma conexão
+
+**Vale a pena quando:**
+- É site institucional, landing page, página simples ou manutenção
+- Descrição clara (cliente sabe o que quer = menos retrabalho)
+- Cliente tem alguma avaliação — mesmo 3★ é melhor que nenhuma
+- Orçamento definido (não "aberto"/"a combinar")
 
 **NÃO gastar conexão quando:**
-- Pede sistema complexo, login de usuário, integração com banco de dados
-- Pede WordPress/Wix específico (não é o seu forte agora)
-- Orçamento abaixo de R$200 (não compensa o esforço da prévia)
-- Descrição vaga tipo "preciso de um site, me chama" (vai dar retrabalho)
-- Cliente sem nenhuma avaliação E com orçamento muito baixo
-
-**Estratégia de preço no início:**
-Os primeiros 2-3 trabalhos valem mais pela avaliação do que pelo dinheiro.
-Cobrar na faixa de R$300-500 nos primeiros, e subir pra R$800-1500 depois
-de ter 3-5 avaliações positivas.
+- Pede sistema complexo, login de usuário, banco de dados
+- Pede WordPress/Wix/Shopify/Elementor (não é o seu forte hoje)
+- **Cliente sem avaliação + orçamento "aberto" ou mínimo baixo** — isso é
+  leilão de preço, sempre ganha quem cobra R$50
+- Descrição vaga tipo "preciso de um site, me chama"
+- Projeto travado para membros Premium (você não consegue nem propor)
 
 ---
 
